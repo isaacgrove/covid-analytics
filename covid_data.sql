@@ -8,10 +8,16 @@ it in the context of a real project.
 
 */
 
--- Loads data
+-- Loads data.
 LOAD DATA LOCAL infile '/Users/isaacgrove/Desktop/covid_project/coviddeaths.csv' 
 INTO TABLE coviddeaths FIELDS TERMINATED BY ',' ENCLOSED BY '"' 
 LINES TERMINATED BY '\n' IGNORE 1 rows;
+
+/* 
+^I found that MySQL Workbench's Import Tool didn't work properly, 
+so I had to use the command line. I also used a Python script to write the 
+CREATE TABLE statement. This is available in processing.ipynb in this repo
+*/
 
 -- Initial look / "EDA"
 SELECT * FROM covid_project.coviddeaths;
